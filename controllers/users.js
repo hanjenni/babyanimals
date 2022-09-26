@@ -16,7 +16,6 @@ module.exports = {
 
 async function signup(req, res) {
   console.log(req.body, " req.body in signup", req.file);
-
   if (!req.file) return res.status(400).json({ error: "Please submit Photo!" });
   // Create the key that we will store in the s3 bucket name
   // pupstagram/ <- will upload everything to the bucket so it appears
@@ -55,6 +54,7 @@ async function signup(req, res) {
             )} Already taken!`,
           });
       } else {
+        console.log(err)
         res.status(500).json({
           err: err,
           message: "Internal Server Error, Please try again",
