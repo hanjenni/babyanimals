@@ -28,9 +28,16 @@ function PostCard({ post }) {
             </Card.Content>
             <Card.Content extra textAlign={"right"}>
                 <Icon
+                    name={"delete"}
+                    size="large"
+                />
+                <Icon
                     name={"heart"}
                     size="large"
                 />
+
+
+
             </Card.Content>
         </Card>
     );
