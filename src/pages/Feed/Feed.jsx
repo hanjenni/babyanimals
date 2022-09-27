@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import PostGallery from '../../components/PostGallery/PostGallery';
 import AddPost from '../../components/AddPost/AddPost';
@@ -8,14 +8,15 @@ import { Grid } from 'semantic-ui-react';
 
 
 
-export default function Feed () {
-    //const [posts, setPosts] = useState([]);
+export default function Feed() {
+    const [posts, setPosts] = useState([]);
 
     async function handleAddPost(post){
-
+       
         try{
             const response = await postsAPI.create(post);
             console.log(response);
+            setPosts([response.data, ...posts]);
 
         }catch(err){
             console.log(err.message);
@@ -37,7 +38,7 @@ export default function Feed () {
             </Grid.Row>  
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>
-                     <PostGallery />
+                     <PostGallery posts={posts} />
                 </Grid.Column>
             </Grid.Row>          
 
