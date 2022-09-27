@@ -22,8 +22,6 @@ function PostCard({post}){
               </Link>
             </Card.Header>
           </Card.Content>
-        
-  
         <Image src={`${post?.photoUrl}`} wrapped ui={false} />
         <Card.Content>
           <Card.Description>{post.caption}</Card.Description>
@@ -33,7 +31,6 @@ function PostCard({post}){
             name={"heart"}
             size="large"
           />
-          {/* {post.likes.length} Likes */}
         </Card.Content>
       </Card>
     );

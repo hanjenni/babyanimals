@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Post = require('../models/post');
 const jwt = require('jsonwebtoken');
 const S3 = require("aws-sdk/clients/s3");
 const s3 = new S3(); // initate the S3 constructor which can talk to aws/s3 our bucket!
@@ -11,8 +12,26 @@ const SECRET = process.env.SECRET;
 
 module.exports = {
   signup,
-  login
+  login,
+  profile
 };
+
+async function profile(req, res) {
+  try {
+    const user = await User.findOne({ username: req.params.username })
+    if(!user) return res.status(404).json({error: 'User Not Found'});
+
+    const posts = await Post.find({user: user._id}).populate('user').exec();
+    res.status(200).json({data: {
+      user: user,
+      posts: posts
+    }
+  });
+  }catch(err){
+    console.log(err.message, '<-profileCtrl')
+    res.status(400).json({error: 'something is wrong'});
+  }
+}
 
 async function signup(req, res) {
   console.log(req.body, " req.body in signup", req.file);
@@ -66,21 +85,21 @@ async function signup(req, res) {
 
 async function login(req, res) {
   try {
-    const user = await User.findOne({email: req.body.email});
+    const user = await User.findOne({ email: req.body.email });
     console.log(user, ' this user in login')
-    if (!user) return res.status(401).json({err: 'bad credentials'});
+    if (!user) return res.status(401).json({ err: 'bad credentials' });
     // had to update the password from req.body.pw, to req.body password
     user.comparePassword(req.body.password, (err, isMatch) => {
-        
+
       if (isMatch) {
         const token = createJWT(user);
-        res.json({token});
+        res.json({ token });
       } else {
-        return res.status(401).json({err: 'bad credentials'});
+        return res.status(401).json({ err: 'bad credentials' });
       }
     });
   } catch (err) {
-    return res.status(401).json({err: 'error message'});
+    return res.status(401).json({ err: 'error message' });
   }
 }
 
@@ -89,9 +108,9 @@ async function login(req, res) {
 
 function createJWT(user) {
   return jwt.sign(
-    {user}, // data payload
+    { user }, // data payload
     SECRET,
-    {expiresIn: '24h'}
+    { expiresIn: '24h' }
   );
 }
 

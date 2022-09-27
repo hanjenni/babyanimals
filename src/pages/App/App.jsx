@@ -5,6 +5,7 @@ import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 import Feed from '../Feed/Feed';
+import Profile from '../Profile/Profile';
 
 function App() {
   const [user, setUser] = useState(userService.getUser()); // getUser decodes our JWT token, into a javascript object
@@ -23,8 +24,11 @@ function App() {
   if (user) {
     return (
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/:username"
+          element={<Profile />} />
+        <Route
+          path="/"
           element={<Feed />} />
         <Route
           path="/login"

@@ -24,14 +24,14 @@ export default function SignUpPage(props) {
 
   const [selectedFile, setSelectedFile] = useState('')
 
-  function handleChange(e){
+  function handleChange(e) {
     setState({
       ...state,
-      [e.target.name] : e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
     formData.append('photo', selectedFile);
@@ -42,17 +42,17 @@ export default function SignUpPage(props) {
     // console.log(formData.forEach((item) => console.log(item)), '<-formData'
     // );
 
-    try{
+    try {
       await userService.signup(formData);
       props.handleSignUpOrLogin();
       navigate('/');
     } catch (err) {
       console.log(err);
-      setError({message: err.message, passwordError: false});
+      setError({ message: err.message, passwordError: false });
     }
   }
 
-  function handleFileInput(e){
+  function handleFileInput(e) {
     console.log(e.target.files, '<-this is e.target.files')
     setSelectedFile(e.target.files[0]);
   }
@@ -118,7 +118,7 @@ export default function SignUpPage(props) {
               Sign Up
             </Button>
           </Segment>
-          {error.message ? <ErrorMessage error={error.message} />: null}
+          {error.message ? <ErrorMessage error={error.message} /> : null}
         </Form>
         <Message>
           Already a member? <Link to='/login'>Login</Link>
