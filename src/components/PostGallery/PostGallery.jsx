@@ -3,7 +3,7 @@ import PostCard from '../PostCard/PostCard';
 import { Card } from 'semantic-ui-react'
 
 
-export default function PostGallery({posts, numPhotosCol}){
+export default function PostGallery({ posts, numPhotosCol }) {
     return (
         <Card.Group itemsPerRow={numPhotosCol} stackable>
             {posts.map((post) => {

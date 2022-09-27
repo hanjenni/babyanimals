@@ -19,17 +19,18 @@ module.exports = {
 async function profile(req, res) {
   try {
     const user = await User.findOne({ username: req.params.username })
-    if(!user) return res.status(404).json({error: 'User Not Found'});
+    if (!user) return res.status(404).json({ error: 'User Not Found' });
 
-    const posts = await Post.find({user: user._id}).populate('user').exec();
-    res.status(200).json({data: {
-      user: user,
-      posts: posts
-    }
-  });
-  }catch(err){
+    const posts = await Post.find({ user: user._id }).populate('user').exec();
+    res.status(200).json({
+      data: {
+        user: user,
+        posts: posts
+      }
+    });
+  } catch (err) {
     console.log(err.message, '<-profileCtrl')
-    res.status(400).json({error: 'something is wrong'});
+    res.status(400).json({ error: 'something is wrong' });
   }
 }
 

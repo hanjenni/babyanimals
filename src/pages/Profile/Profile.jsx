@@ -43,7 +43,7 @@ export default function Profile() {
     }
 
     return (
-        <Grid textAlign='center' columns={4}>
+        <Grid textAlign='center' columns={3}>
             <Grid.Row>
                 <Grid.Column>
                     <Header />
@@ -55,12 +55,11 @@ export default function Profile() {
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-                <Grid.Column>
+                <Grid.Column >
                     <PostGallery
                         posts={posts}
-                        numPhotosCol={3}
+                        numPhotosCol={1}
                         isProfile={true}
-                        
                     />
                 </Grid.Column>
             </Grid.Row>
