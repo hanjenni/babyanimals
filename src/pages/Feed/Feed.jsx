@@ -11,7 +11,7 @@ import { Grid } from 'semantic-ui-react';
 
 
 
-export default function Feed() {
+export default function Feed({loggedUser}) {
     const [posts, setPosts] = useState([]);
     const [error, setError] = useState("");
 
@@ -25,20 +25,22 @@ export default function Feed() {
     //     }
     // }
 
-    async function addLike(postId){
-        try{
-            const response = await likesAPI.create(postId);
+    async function addLike(postId) {
 
-        }catch(err){
-            console.log(err, 'err from server')
+    
+        try {
+          const response = await likesAPI.create(postId);
+          getPosts();
+        } catch (err) {
+          setError("error adding like");
         }
-
-    }
+      }
 
     async function removeLike(likeId) {
         try {
             const response = await likesAPI.removeLike(likeId);
             console.log(response, '<-remove likes');
+            getPosts()
         }catch(err) {
             console.log(err)
         }
@@ -91,10 +93,11 @@ export default function Feed() {
                 <Grid.Column >
                     <PostGallery 
                         posts={posts}
-                        numsPhotosCol={4}
+                        numsPhotosCol={3}
                         isProfile={false}
                         addLike={addLike}
                         removeLike={removeLike}
+                        loggedUser={loggedUser}
                         // removePost={removePost}
                     />
                 </Grid.Column>

@@ -29,7 +29,7 @@ function App() {
           element={<Profile />} />
         <Route
           path="/"
-          element={<Feed />} />
+          element={<Feed loggedUser={user}/>} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
