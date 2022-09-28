@@ -10,7 +10,8 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 
 
-export default function Profile() {
+
+export default function Profile({loggedUser, handleLogout}) {
     const [posts, setPosts] = useState([]);
     const [profileUser, setProfileUser] = useState({});
     const [error, setError] = useState('');
@@ -46,7 +47,7 @@ export default function Profile() {
         <Grid textAlign='center' columns={3}>
             <Grid.Row>
                 <Grid.Column>
-                    <Header />
+                    <Header  handleLogout={handleLogout} loggedUser={loggedUser}/>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>

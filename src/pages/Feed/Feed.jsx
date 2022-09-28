@@ -11,7 +11,7 @@ import { Grid } from 'semantic-ui-react';
 
 
 
-export default function Feed({loggedUser}) {
+export default function Feed({loggedUser, handleLogout}) {
     const [posts, setPosts] = useState([]);
     const [error, setError] = useState("");
 
@@ -80,8 +80,8 @@ export default function Feed({loggedUser}) {
     return (
         <Grid textAlign='center' columns={3}>
             <Grid.Row>
-                <Grid.Column>
-                    <Header />
+                <Grid.Column style={{ maxWidth: 1000 }}>
+                    <Header handleLogout={handleLogout} loggedUser={loggedUser}/>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
