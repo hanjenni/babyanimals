@@ -5,6 +5,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import AddPost from '../../components/AddPost/AddPost';
 
 import * as postsAPI from "../../utils/postApi";
+import * as likesAPI from '../../utils/likesApi';
 
 import { Grid } from 'semantic-ui-react';
 
@@ -13,6 +14,35 @@ import { Grid } from 'semantic-ui-react';
 export default function Feed() {
     const [posts, setPosts] = useState([]);
     const [error, setError] = useState("");
+
+
+    // async function removePost(postId){
+    //     try{
+    //         const response = await postsAPI.delete(postId);
+    //         console.log(response, '<-remove Post');
+    //     }catch(err){
+    //         console.log(err, 'err from removePost')
+    //     }
+    // }
+
+    async function addLike(postId){
+        try{
+            const response = await likesAPI.create(postId);
+
+        }catch(err){
+            console.log(err, 'err from server')
+        }
+
+    }
+
+    async function removeLike(likeId) {
+        try {
+            const response = await likesAPI.removeLike(likeId);
+            console.log(response, '<-remove likes');
+        }catch(err) {
+            console.log(err)
+        }
+    }
 
     async function handleAddPost(post) {
         try {
@@ -63,6 +93,9 @@ export default function Feed() {
                         posts={posts}
                         numsPhotosCol={4}
                         isProfile={false}
+                        addLike={addLike}
+                        removeLike={removeLike}
+                        // removePost={removePost}
                     />
                 </Grid.Column>
             </Grid.Row>

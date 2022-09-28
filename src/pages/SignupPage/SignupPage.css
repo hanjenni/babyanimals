@@ -1,0 +1,9 @@
+.Body {
+    background-color: rgb(241, 241, 123);
+}
+
+.SignUpForm
+ {
+    border-color: red;
+    border-style: dotted;
+}

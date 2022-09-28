@@ -5,6 +5,8 @@ import { Button, Form, Grid, Header, Image, Segment, Message } from 'semantic-ui
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
 
+import './SignupPage.css';
+
 export default function SignUpPage(props) {
   const [error, setError] = useState({
     message: '',
@@ -58,12 +60,14 @@ export default function SignUpPage(props) {
   }
 
   return (
+  <>
+  <div className="Body">
     <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as='h2' color='yellow' textAlign='center'>
           <Image src='/animal.png' /> Sign Up
         </Header>
-        <Form onSubmit={handleSubmit} size='large' autoComplete='on'>
+        <Form onSubmit={handleSubmit} size='large' autoComplete='on' className="SignUpForm">
           <Segment stacked>
             <Form.Input
               name='username'
@@ -84,7 +88,7 @@ export default function SignUpPage(props) {
               onChange={handleChange}
               required
             />
-            <Form.Input
+            <Form.Input 
               name='password'
               type='password'
               value={state.password}
@@ -125,5 +129,8 @@ export default function SignUpPage(props) {
         </Message>
       </Grid.Column>
     </Grid>
+    </div>
+    </>
+ 
   );
 }
