@@ -24,7 +24,12 @@ export default function About({ handleLogout}) {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <h3 className='aboutInfo'>About Baby Animals</h3>  
+            <h2 className='aboutInfo'>
+              Need a healthy way to deal with stress? 
+              <br></br>
+              Come take a look at some baby animals
+              
+            </h2>  
           </Grid.Column>
         </Grid.Row>
        </Grid>
