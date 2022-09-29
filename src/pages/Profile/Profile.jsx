@@ -47,8 +47,8 @@ export default function Profile({ loggedUser, handleLogout }) {
   }
 
   return (
-  <body>
-    <Grid className='myProfile'>
+  <body className='body'>
+    <Grid>
       <Grid.Row>
         <Grid.Column>
           <Header handleLogout={handleLogout} loggedUser={loggedUser} />

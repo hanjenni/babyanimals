@@ -5,7 +5,7 @@ import './About.css'
 
 export default function About({ handleLogout}) {
     return (
-    <body>
+    <body className='aboutBody'>
       <Grid centered>
         <Grid.Row>
           <Grid.Column>
