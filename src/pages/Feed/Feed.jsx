@@ -16,19 +16,7 @@ export default function Feed({loggedUser, handleLogout}) {
     const [error, setError] = useState("");
     console.log(loggedUser, '<-feed function')
 
-
-    // async function removePost(postId){
-    //     try{
-    //         const response = await postsAPI.delete(postId);
-    //         console.log(response, '<-remove Post');
-    //     }catch(err){
-    //         console.log(err, 'err from removePost')
-    //     }
-    // }
-
     async function addLike(postId) {
-
-    
         try {
           const response = await likesAPI.create(postId);
           getPosts();
@@ -99,7 +87,6 @@ export default function Feed({loggedUser, handleLogout}) {
               addLike={addLike}
               removeLike={removeLike}
               loggedUser={loggedUser}
-            //   removePost={removePost}
             />
           </Grid.Column>
         </Grid.Row>

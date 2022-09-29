@@ -40,11 +40,6 @@ function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
             ) : (
             <Card.Content extra textAlign={"right"} >
                 <Icon
-                    name={"delete"}
-                    size="large"
-                    onClick=''
-                />
-                <Icon
                     name={"heart"}
                     size="large"
                     color={likedColor}
