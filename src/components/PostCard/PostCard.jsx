@@ -35,7 +35,10 @@ function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
             <Card.Content>
                 <Card.Description>{post.caption}</Card.Description>
             </Card.Content>
-            <Card.Content extra textAlign={"right"}>
+            {isProfile ? (
+                ""
+            ) : (
+            <Card.Content extra textAlign={"right"} >
                 <Icon
                     name={"delete"}
                     size="large"
@@ -50,7 +53,9 @@ function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
 
                 {post.likes.length} Likes
             </Card.Content>
+            )}
         </Card>
+        
     );
 }
 
