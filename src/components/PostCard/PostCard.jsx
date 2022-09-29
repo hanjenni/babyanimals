@@ -33,8 +33,8 @@ function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
             )}
 
             <Image src={`${post?.photoUrl}`} wrapped ui={false} />
-            <Card.Content>
-                <Card.Description textAlign='center'>{post.caption}</Card.Description>
+            <Card.Content className='CardFont'>
+                <Card.Description className='CardFont' textAlign='center'>{post.caption}</Card.Description>
             </Card.Content>
             {isProfile ? (
                 ""

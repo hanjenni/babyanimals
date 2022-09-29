@@ -7,6 +7,7 @@ import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from '../../utils/likesApi';
 import { Grid } from 'semantic-ui-react';
 import "./Feed.css";
+import '../../components/Header/Header.css';
 
 
 

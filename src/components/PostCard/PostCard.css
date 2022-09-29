@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Sniglet:wght@400;800&display=swap');
 
-.CardHeader {
+.CardHeader, .CardFont {
     font-family: 'Jua', sans-serif;
+ 
 }
 
+.CardFont {
+    font-size:x-large;
+    
+}
