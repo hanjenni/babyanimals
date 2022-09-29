@@ -14,6 +14,7 @@ import { Grid } from 'semantic-ui-react';
 export default function Feed({loggedUser, handleLogout}) {
     const [posts, setPosts] = useState([]);
     const [error, setError] = useState("");
+    console.log(loggedUser, '<-feed function')
 
 
     // async function removePost(postId){

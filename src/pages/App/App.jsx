@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route
           path="/:username"
-          element={<Profile handleLogout={handleLogout}/>} />
+          element={<Profile loggedUser={user} handleLogout={handleLogout}/>} />
         <Route
           path="/"
           element={<Feed loggedUser={user} handleLogout={handleLogout}/>} />

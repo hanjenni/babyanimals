@@ -3,7 +3,7 @@ import tokenService from './tokenService';
 const BASE_URL = '/api/users/';
 
 function getProfile(username) {
-  console.log('getProfile calling')
+  console.log(username, '<-getProfile calling')
   return fetch(BASE_URL + username, {
     headers: {
       Authorization: "Bearer " + tokenService.getToken(),

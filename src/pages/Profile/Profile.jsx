@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import ProfileBio from '../../components/ProfileBio/ProfileBio'
 import PostGallery from '../../components/PostGallery/PostGallery'
 import Header from '../../components/Header/Header';
@@ -9,14 +9,16 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 
 
-
-
 export default function Profile({loggedUser, handleLogout}) {
+    console.log(loggedUser, '<--profile function')
     const [posts, setPosts] = useState([]);
     const [profileUser, setProfileUser] = useState({});
     const [error, setError] = useState('');
 
     const { username } = useParams();
+    console.log(username, '<-username')
+
+
     useEffect(() => {
         async function getProfile() {
             try {
@@ -61,6 +63,7 @@ export default function Profile({loggedUser, handleLogout}) {
                         posts={posts}
                         numPhotosCol={1}
                         isProfile={true}
+                        loggedUser={loggedUser}
                     />
                 </Grid.Column>
             </Grid.Row>
