@@ -47,6 +47,7 @@ export default function Profile({ loggedUser, handleLogout }) {
   }
 
   return (
+  <body>
     <Grid className='myProfile'>
       <Grid.Row>
         <Grid.Column>
@@ -69,6 +70,7 @@ export default function Profile({ loggedUser, handleLogout }) {
         </Grid.Column>
       </Grid.Row>
     </Grid>
+  </body>
   );
 }
 

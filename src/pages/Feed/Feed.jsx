@@ -68,7 +68,7 @@ export default function Feed({loggedUser, handleLogout}) {
 
 
     return (
-   
+    <body>
       <Grid centered className='Feed'>
         <Grid.Row>
           <Grid.Column>
@@ -93,6 +93,6 @@ export default function Feed({loggedUser, handleLogout}) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-     
+    </body> 
     );
 }
