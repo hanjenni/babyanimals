@@ -124,7 +124,7 @@ export default function SignUpPage(props) {
           </Segment>
           {error.message ? <ErrorMessage error={error.message} /> : null}
         </Form>
-        <Message>
+        <Message className="Message">
           Already a member? <Link to='/login'>Login</Link>
         </Message>
       </Grid.Column>

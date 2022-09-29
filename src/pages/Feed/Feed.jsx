@@ -3,11 +3,11 @@ import Header from '../../components/Header/Header';
 import PostGallery from '../../components/PostGallery/PostGallery';
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import AddPost from '../../components/AddPost/AddPost';
-
 import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from '../../utils/likesApi';
-
 import { Grid } from 'semantic-ui-react';
+import "./Feed.css";
+
 
 
 
@@ -67,7 +67,8 @@ export default function Feed({loggedUser, handleLogout}) {
 
 
     return (
-        <Grid centered>
+   
+      <Grid centered className='Feed'>
         <Grid.Row>
           <Grid.Column>
             <Header handleLogout={handleLogout} loggedUser={loggedUser} />
@@ -91,5 +92,6 @@ export default function Feed({loggedUser, handleLogout}) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+     
     );
 }

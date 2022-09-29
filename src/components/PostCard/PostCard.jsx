@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import './PostCard.css';
 
 
 function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
@@ -15,7 +16,7 @@ function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
             ) : (
                 <Card.Content textAlign="left">
                     <Card.Header>
-                        <Link to={`/${post.user.username}`}>
+                        <Link to={`/${post.user.username}`} className='CardHeader'>
                             <Image
                                 size="large"
                                 avatar
@@ -33,7 +34,7 @@ function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
 
             <Image src={`${post?.photoUrl}`} wrapped ui={false} />
             <Card.Content>
-                <Card.Description>{post.caption}</Card.Description>
+                <Card.Description textAlign='center'>{post.caption}</Card.Description>
             </Card.Content>
             {isProfile ? (
                 ""

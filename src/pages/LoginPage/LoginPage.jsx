@@ -37,10 +37,10 @@ export default function LoginPage(props) {
   }
 
   return (
-
+  <div className="LoginBody">
     <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='teal' textAlign='center'>
+        <Header as='h2' color='purple' textAlign='center'>
           <Image src='/animal.png' /> Welcome Back! 
         </Header>
         <Form onSubmit={handleSubmit} size='large' autoComplete='on'>
@@ -66,7 +66,7 @@ export default function LoginPage(props) {
               required
 
             />
-            <Button color='teal' fluid size='large'>
+            <Button color= 'purple' fluid size='large'>
               Log In
             </Button>
           </Segment>
@@ -77,6 +77,6 @@ export default function LoginPage(props) {
         {error ? <ErrorMessage error={error} /> : null}
       </Grid.Column>
     </Grid>
- 
+  </div>
   );
 }

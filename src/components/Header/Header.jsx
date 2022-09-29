@@ -1,64 +1,44 @@
 import React from 'react'
 import { Header, Icon, Image, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
+import './Header.css';
 import HeaderSubHeader from 'semantic-ui-react/dist/commonjs/elements/Header/HeaderSubheader';
+
+
+
 
 export default function PageHeader({ loggedUser, handleLogout }) {
   return (
     <>
-
-      {/* <Header as='h3' floated='right'>
-        <Link to="/" onClick={handleLogout}>
-          Logout
-        </Link>
-      </Header>
-      <Header as="h3" floated="right">
-      <Link to="/">
-          Home Page
-        </Link>
-      </Header>
-      <Header as="h3" floated="right">
-      <Link to={`/${loggedUser?.username}`}>
-          My Page
-        </Link>
-      </Header>
-
-      <Image
-        centered
-        size='small'
-        src='/animal.png' */}
-
-      <div>
-        <Segment clearing>
+        <Segment clearing className='Header'>
           <Header as='h3' floated='right'>
             <Link to="/" onClick={handleLogout}>
-              Logout
+              <h2>Logout</h2>
             </Link>
           </Header>
           <Header as='h3' floated='right'>
             <Link to='/'>
-              Home Page
+            <h2>Home</h2>
             </Link>
           </Header>
           <Header as='h3' floated='right'>
             <Link to={`/${loggedUser?.username}`}>
-              My Page
+            <h2>My Page</h2>
+            </Link>
+          </Header>
+          <Header as='h3' floated='left'>
+            <Link to='/about'>
+            <h2>About</h2>
             </Link>
           </Header>
         </Segment>
-      </div> 
-        <Image
-          centered
-          size='small'
-          src='/animal.png'
-        />
+      <Image
+        centered
+        size='small'
+        src='/animal.png'
+       
+      />
       
-
-
-
-
-      {/* /> */}
-
     </>
   )
 }
