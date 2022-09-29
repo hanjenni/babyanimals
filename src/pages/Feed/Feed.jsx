@@ -79,31 +79,30 @@ export default function Feed({loggedUser, handleLogout}) {
 
 
     return (
-        <Grid textAlign='center' columns={3}>
-            <Grid.Row>
-                <Grid.Column style={{ maxWidth: 1000 }}>
-                    <Header handleLogout={handleLogout} loggedUser={loggedUser}/>
-                </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-                <Grid.Column style={{ maxWidth: 450 }}>
-                    <AddPost handleAddPost={handleAddPost} />
-                </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-                <Grid.Column >
-                    <PostGallery 
-                        posts={posts}
-                        numsPhotosCol={3}
-                        isProfile={false}
-                        addLike={addLike}
-                        removeLike={removeLike}
-                        loggedUser={loggedUser}
-                        // removePost={removePost}
-                    />
-                </Grid.Column>
-            </Grid.Row>
-        </Grid>
-
+        <Grid centered>
+        <Grid.Row>
+          <Grid.Column>
+            <Header handleLogout={handleLogout} loggedUser={loggedUser} />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <AddPost handleAddPost={handleAddPost} />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column style={{ maxWidth: 600 }}>
+            <PostGallery
+              posts={posts}
+              numPhotosCol={1}
+              isProfile={false}
+              addLike={addLike}
+              removeLike={removeLike}
+              loggedUser={loggedUser}
+            //   removePost={removePost}
+            />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     );
 }

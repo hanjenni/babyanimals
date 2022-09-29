@@ -46,28 +46,28 @@ export default function Profile({loggedUser, handleLogout}) {
     }
 
     return (
-        <Grid textAlign='center' columns={3}>
-            <Grid.Row>
-                <Grid.Column>
-                    <Header  handleLogout={handleLogout} loggedUser={loggedUser}/>
-                </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-                <Grid.Column>
-                    <ProfileBio user={profileUser} />
-                </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-                <Grid.Column >
-                    <PostGallery
-                        posts={posts}
-                        numPhotosCol={1}
-                        isProfile={true}
-                        loggedUser={loggedUser}
-                    />
-                </Grid.Column>
-            </Grid.Row>
-        </Grid>
+        <Grid>
+      <Grid.Row>
+        <Grid.Column>
+		<Header handleLogout={handleLogout} loggedUser={loggedUser}/>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column>
+          <ProfileBio user={profileUser} />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row centered>
+        <Grid.Column style={{ maxWidth: 500 }}>
+          <PostGallery
+            posts={posts}
+            numPhotosCol={1}
+            isProfile={true}
+            loggedUser={loggedUser}
+          />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
     );
 }
 

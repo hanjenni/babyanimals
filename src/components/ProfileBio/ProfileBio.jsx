@@ -2,7 +2,7 @@ import { Image, Grid, Segment } from "semantic-ui-react";
 
 function ProfileBio({ user }) {
     return (
-        <Grid textAlign="center" columns={2}>
+        <Grid textAlign="right" columns={2}>
             <Grid.Row>
                 <Grid.Column>
                     <Image
@@ -11,12 +11,12 @@ function ProfileBio({ user }) {
                                 : "https://react.semantic-ui.com/images/wireframe/square-image.png"
                             } `}
                         avatar
-                        size="small"
+                        size="tiny"
                     />
                 </Grid.Column>
-                <Grid.Column textAlign="center" style={{ maxWidth: 600 }}>
+                <Grid.Column textAlign="left" style={{ maxWidth: 600 }}>
                     <Segment vertical>
-                        <h3>{user.username}</h3>
+                        <h1>{user.username}</h1>
                     </Segment>
                 </Grid.Column>
             </Grid.Row>
