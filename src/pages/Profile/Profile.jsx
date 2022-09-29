@@ -47,7 +47,7 @@ export default function Profile({ loggedUser, handleLogout }) {
   }
 
   return (
-  <body className='body'>
+  <body>
     <Grid>
       <Grid.Row>
         <Grid.Column>

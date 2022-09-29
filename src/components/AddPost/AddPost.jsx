@@ -38,6 +38,7 @@ export default function AddPost(props) {
                 <Form.Input
                     className='form'
                     name='caption'
+                    placeholder='add a caption'
                     value={state.caption}
                     onChange={handleChange}
                     required
@@ -46,7 +47,6 @@ export default function AddPost(props) {
                     <Form.Input
                         type='file'
                         name='photo'
-                        placeholder='add an image'
                         onChange={handleFileInput}
                     />
                 </Form.Field>

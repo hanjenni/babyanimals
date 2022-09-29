@@ -68,7 +68,7 @@ export default function Feed({loggedUser, handleLogout}) {
 
 
     return (
-    <body className='feedPage'>
+    <body>
       <Grid centered className='Feed'>
         <Grid.Row>
           <Grid.Column>

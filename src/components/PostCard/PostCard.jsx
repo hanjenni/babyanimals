@@ -5,7 +5,7 @@ import './PostCard.css';
 
 
 function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
-    const liked = post.likes.findIndex((like) => like.username === loggedUser.username);
+    const liked = post?.likes.findIndex((like) => like?.username === loggedUser?.username);
     const likedColor = liked > -1 ? 'red' : 'grey';
     const clickHandler = liked > -1 ? () => removeLike(post.likes[liked]._id) : () => addLike(post._id)
 

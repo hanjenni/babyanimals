@@ -7,7 +7,7 @@ function ProfileBio({ user }) {
     return (
   
         <Grid textAlign="right" columns={2}>
-            <Grid.Row className="Username">
+            <Grid.Row className="username">
                 <Grid.Column>
                     <Image
                         src={`${user.photoUrl

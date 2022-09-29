@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Jua&family=Sniglet:wght@400;800&display=swap');
-
-
-.feedPage {
+body {
     background-color: #CAE5C3;
     font-family: 'Jua', sans-serif;
- 
+    color: rgb(98, 98, 98);
 }
 
