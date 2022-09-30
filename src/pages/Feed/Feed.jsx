@@ -51,7 +51,7 @@ export default function Feed({loggedUser, handleLogout}) {
         try {
             const response = await postsAPI.getAll();
             console.log(response, " data");
-            const dateofPic = [...response.data].map(data => { return { ...data, date: new Date(data.user.createdAt) } } )
+            const dateofPic = [...response.data].map(data => { return { ...data, date: new Date(data.createdAt) } } )
             .sort((a, b) => b.date - a.date)  
             setPosts(dateofPic);
 

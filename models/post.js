@@ -11,7 +11,8 @@ const postSchema = new mongoose.Schema({
     photoUrl: String,
     caption: String,
     likes: [likesSchema], 
-  
+  }, {
+    timestamps: true
   })
  
 
