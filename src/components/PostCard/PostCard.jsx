@@ -10,7 +10,7 @@ function PostCard({ post, isProfile, addLike, removeLike, loggedUser }) {
     const clickHandler = liked > -1 ? () => removeLike(post.likes[liked]._id) : () => addLike(post._id)
 
     return (
-        <Card key={post._id} raised>
+        <Card key={post._id} color='brown'>
             {isProfile ? (
                 ""
             ) : (

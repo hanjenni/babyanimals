@@ -1,10 +1,17 @@
 .CardHeader, .CardFont {
     font-family: 'Jua', sans-serif;
     color: rgb(98, 98, 98);
+
  
 }
 
 .CardFont {
     font-size:x-large;
     
+}
+
+.mainCards {
+    border-style: solid;
+    border-width: 10px;
+    border-color:  #D5C7A9;
 }

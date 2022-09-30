@@ -9,7 +9,7 @@ function ProfileBio({ user }) {
         <Grid textAlign="right" columns={2}>
             <Grid.Row className="username">
                 <Grid.Column>
-                    <Image
+                    <Image className="avatarImage"
                         src={`${user.photoUrl
                                 ? user.photoUrl
                                 : "https://react.semantic-ui.com/images/wireframe/square-image.png"
