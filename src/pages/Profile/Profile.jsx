@@ -9,7 +9,6 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import './Profile.css'
 
 
-
 export default function Profile({ loggedUser, handleLogout }) {
   console.log(loggedUser, '<--profile function')
   const [posts, setPosts] = useState([]);

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { Button, Form, Grid, Header, Image, Segment, Message } from 'semantic-ui-react';
-
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
-
 import './SignupPage.css';
 
 export default function SignUpPage(props) {
@@ -41,8 +39,7 @@ export default function SignUpPage(props) {
       formData.append(key, state[key]);
     }
     console.log(formData, '<-formdata')
-    // console.log(formData.forEach((item) => console.log(item)), '<-formData'
-    // );
+   
 
     try {
       await userService.signup(formData);

@@ -5,8 +5,6 @@ import userService from "../../utils/userService";
 import { Button, Form, Grid, Header, Image, Segment, Message } from 'semantic-ui-react';
 import { useNavigate, Link } from "react-router-dom";
 
-
-
 export default function LoginPage(props) {
   const [error, setError] = useState('');
   const [state, setState] = useState({

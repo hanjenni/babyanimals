@@ -3,9 +3,6 @@ import { Header, Icon, Image, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-
-
-
 export default function PageHeader({ loggedUser, handleLogout }) {
   return (
     <>
@@ -38,8 +35,7 @@ export default function PageHeader({ loggedUser, handleLogout }) {
         size='small'
         src='/animal.png'
        
-      />
-      
+      />     
     </>
   )
 }

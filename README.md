@@ -1,39 +1,32 @@
-## Setup 
+# Baby Animals
+Are you stressed? Do you love cute baby animals? If you answered yes to one or both questions, Baby Animals is the site for you. Come share and view adorable pictures of baby animals! 
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+# Deployment Link
+[Link to Baby Animals](https://baby-animals.herokuapp.com/)
 
+# Visuals
+Login Page
+![alt text](https://i.imgur.com/uGP0OwG.png)
+Home Page
+![alt text](https://i.imgur.com/PreN95H.png)
+Home Page
+![alt text](https://i.imgur.com/zCtmxx1.png)
+My Page
+![alt text](https://i.imgur.com/EZnRzDZ.png)
 
-#### Setup your git repo
+# Technologies Used
+* MongoDB
+* Express
+* React
+* Node.js
+* Semantic UI
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2.  Then follow the directions on github that says ```…or create a new repository on the command line```
+# Planning
+[Trello Board](https://trello.com/b/X8xp1TQY/baby-animals) with Wireframe and ERD
 
-it should look like this
+# Planned Future Enhancements
+* Search bar 
+* Comment on post
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
-git push -u origin master
-```
-
-#### Setup the App
-
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+# Credit and Thanks
+Thank you to all my instructors and TA's!

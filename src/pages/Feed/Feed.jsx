@@ -67,10 +67,6 @@ export default function Feed({loggedUser, handleLogout}) {
         getPosts();
     }, []); 
 
-
-
-
-
     return (
     <body>
       <Grid centered className='Feed'>
